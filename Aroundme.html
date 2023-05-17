@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta charset="utf-8" />
+  </head>
     <title>My Map App</title>
     <!-- Include Leaflet CSS and JS files -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -9,7 +11,7 @@
     <!-- Set the height of the map container -->
     <style>
       #map {
-        height: 500px;
+        height: 600px;
       }
 input[type=text] {
   width: 90%;
@@ -17,42 +19,112 @@ input[type=text] {
   margin: 8px 0;
   box-sizing: border-box;
 }
+
+.container {
+            display: flex;
+            }
+            
+            .icon{
+              margin: 10px;
+              text-align: center;
+              font-family: Arial, Helvetica, sans-serif;
+            }
+        
+        .header{
+        display: flex;
+
+        }
+        .searchbar{
+          margin-top: 55px;
+        }
+        
+        input[type="text"]
+{
+    font-size:20px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 40px;
+}
+.lupe{
+  margin-top: 20px
+}
+     
     </style>
   </head>
   <body>
 
       <!-- Create a search bar for the map -->
-      <div>
-        <img src="Main Logo.jpeg" width="70" height="70">
-
-        <input type="text" id="search" placeholder="Search..." size="150" >
-        <button onclick="search()">Go</button>
-     
+      <div class="header">
+        <img src="Main Logo.jpeg" width="120" height="120">
+        <div class="searchbar">
+        <input type="text" id="search" placeholder="Search..." size="120" >
+        <img src="Lupe.jpeg" id="lupe" width="40" height="40" onclick="search()"></img>
+      </div>
       </div>
       <br>
 
   
       <!-- Create buttons for searching different places -->
-      <div>
-          <img src="Apotheke-Icon.jpeg" width="60" height="60" onclick="searchFor('apotheken')"></img>
-          <img src="Bank-Icon.jpeg" width="60" height="60" onclick="searchFor('banks')"></img>
-          <img src="Bar-Icon.jpeg" width="60" height="60" onclick="searchFor('bars')"></img>
-          <img src="Cafe-Icon.jpeg" width="60" height="60" onclick="searchFor('cafés')"></img>
-          <img src="Fitness-Studio.jpeg" width="60" height="60" onclick="searchFor('fitness studio')"></img>
-          <img src="Gaststatten.jpeg" width="60" height="60" onclick="searchFor('gaststätte')"></img>
-          <img src="Hotel.jpeg"width="60" height="60" onclick="searchFor('hotels')"></img>
-          <img src="Einkaufszentrum.jpeg" width="60" height="60"onclick="searchFor('einkaufszentrum')"></img>
-          <img src="Supermarkt.jpeg" width="60" height="60" onclick="searchFor('supermarkt')"></img>
-          <img src="Restaurant.jpeg" width="60" height="60"onclick="searchFor('restaurant')"></img>
-          <img src="Kino-Icon.jpeg" width="60" height="60" onclick="searchFor('kino')"> </img>
-          <img src="Museum-Icon.jpeg" width="60" height="60" onclick="searchFor('museum')"></img>
-          <img src="Park-Icon.jpeg"width="60" height="60" onclick="searchFor('parkplätze')"></img>
-          <img src="krankenhaus-icon.jpeg"width="60" height="60" onclick="searchFor('krankenhäuser')"></img>
-          <img src="Taxi.jpeg"width="60" height="60" onclick="searchFor('taxi')"></img>
-         
+      <div class="container">
+      <div class="icon">
+          <img src="Apotheke-Icon.jpeg" width="70" height="70" onclick="searchFor('apotheken')"></img>
+          <p>Apotheken</p>
       </div>
-      <div>
-        Apotheken 
+      <div class="icon">
+          <img src="Bank-Icon.jpeg" width="70" height="70" onclick="searchFor('banks')"></img>
+          <p>Bank</p>
+      </div>
+      <div class ="icon">
+          <img src="Bar-Icon.jpeg" width="70" height="70" onclick="searchFor('bars')"></img>
+          <p>Bar</p>
+      </div>
+      <div class="icon">
+          <img src="Cafe-Icon.jpeg" width="70" height="70" onclick="searchFor('cafés')"></img>
+          <p>Cafe</p>
+    </div>
+    <div class="icon">
+          <img src="Fitness-Studio.jpeg" width="70" height="70" onclick="searchFor('fitness studio')"></img>
+          <p>Fitness-Studio</p>
+    </div>
+    <div class="icon">
+          <img src="Gaststatten.jpeg" width="70" height="70" onclick="searchFor('gaststätte')"></img>
+          <p>Gaststätte</p>
+  </div>
+  <div class="icon">
+          <img src="Hotel.jpeg"width="70" height="70" onclick="searchFor('hotels')"></img>
+          <p>Hotel</p>
+  </div>
+  <div class="icon">
+          <img src="Einkaufszentrum.jpeg" width="70" height="70"onclick="searchFor('einkaufszentrum')"></img>
+          <p>Einkaufszentrum</p>
+  </div>
+  <div class="icon">
+          <img src="Supermarkt.jpeg" width="70" height="70" onclick="searchFor('supermarkt')"></img>
+          <p>Supermarkt</p>
+  </div>
+  <div class="icon">
+          <img src="Restaurant.jpeg" width="70" height="70"onclick="searchFor('restaurant')"></img>
+          <p>Restaurant</p>
+  </div>
+  <div class="icon">
+          <img src="Kino-Icon.jpeg" width="70" height="70" onclick="searchFor('kino')"> </img>
+          <p>Kino</p>
+  </div>
+  <div class="icon">
+          <img src="Museum-Icon.jpeg" width="70" height="70" onclick="searchFor('museum')"></img>
+          <p>Museum</p>
+  </div>
+  <div class="icon">
+          <img src="Park-Icon.jpeg"width="70" height="70" onclick="searchFor('parkplätze')"></img>
+          <p>Parkplätze</p>
+  </div>
+  <div class="icon">
+          <img src="krankenhaus-icon.jpeg"width="70" height="70" onclick="searchFor('krankenhäuser')"></img>
+          <p>Krankenhaus</p>
+  </div>
+  <div class="icon">
+          <img src="Taxi.jpeg"width="70" height="70" onclick="searchFor('taxi')"></img>
+          <p>Taxi</p>
+      </div>
       </div>
 
 
@@ -69,11 +141,29 @@ input[type=text] {
       // Get the user's location and center the map on it
       map.locate({ setView: true, maxZoom: 16 });
 
+      function onLocationFound(e) {
+    var radius = e.accuracy;
+
+    L.marker(e.latlng).addTo(map)
+        .bindPopup("Sie befinden sich ca. " + radius + " Metern von diesem Punkt").openPopup();
+
+    L.circle(e.latlng, radius).addTo(map);
+}
+
+map.on('locationfound', onLocationFound);
+
+function onLocationError(e) {
+    alert(e.message);
+}
+
+map.on('locationerror', onLocationError);
+
       // Add a tile layer to the map (uses OpenStreetMap)
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: "Map data &copy; OpenStreetMap contributors",
         maxZoom: 19,
       }).addTo(map);
+
 
       // Create a function to search for places on the map
       function searchFor(place) {
